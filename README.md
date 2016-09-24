@@ -14,3 +14,13 @@ Getting started:
 
 Read the CodeBook and the run_analysis.R script to get a general understanding of this project, analysis done to clean data, and required output file.
 Run the run_analysis.R script.
+
+run_analysis.R reads in the processed experiment data and performs a number of steps to get it into summary form.
+
+Scripts downloads the file from source link
+test and train datasets are read in and merged into one data frame.
+The data columns and activity labels are then given names based on the features.txt and activity_labels.txt
+using grepl mean or standard deviation measurements are selected from the given dataset and other columns are excluded from the rest of the analysis.
+The activity identifiers are replaced with the activity labels based on the activity_labels.txt file.
+The data is then grouped by subject and activity, and the mean is calculated for every measurement column.
+resultant summary dataset is written to a file, tidy_dataset.txt.
